@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        // constructor
+
+        /* function Person1(name, age, location, occupation){
+            this.name = name
+            this.age = age
+            this.location = location
+            this.occupation = occupation
+        }
+
+        Person1.prototype.printDetails = function(){
+            console.log(`My name is ${this.name} and I'm ${this.age} years old. I live in ${this.location} and I work as a ${this.occupation}`);
+        };
+
+        const firstUser = new Person1('Jhon', 25, 'Dhaka', 'Driver');
+
+        console.log(firstUser);
+        console.log(firstUser.printDetails()); */
+
+
+        // classes
+
+        /* class Person2 {
+            constructor(name, age, location, occupation) {
+                this.name = name,
+                this.age = age,
+                this.location = location,
+                this.occupation = occupation 
+            }
+
+            printDetails() {
+                console.log(`My name is ${this.name} and I'm ${this.age} years old. I live in ${this.location} and I work as a ${this.occupation}`);
+            }
+        }
+
+        const secondUser = new Person2("Jhon", 30, "Dhaka", "Driver")
+
+        console.log(secondUser);
+        secondUser.printDetails() */
+
+
+        const numbers = ["A", "B", "C", "D"];
+
+        /* function objMakerReduce(numbers) {
+            return numbers.reduce((total, item, i) => {
+                total[i] = item
+                
+                return total
+            }, {});
+        }
+        const result = objMakerReduce(numbers);
+        console.log(result); */
+
+        /* const result = {...numbers}
+        console.log(result); */
+
+        /* let obj = {}
+        for(let i = 0; i < numbers.length; i++) {
+            obj[i] = numbers[i]
+        }
+        console.log(obj); */
+
+        /* let result = {}
+        numbers.forEach((num, i) => {
+            result[i] = num
+        })
+        console.log(result); */
+
+        /* let result = {}
+        numbers.map((el, i) => {
+            return result[i] = el
+        })
+        console.log(result); */
+
+    </script>
+
+</body>
+</html>

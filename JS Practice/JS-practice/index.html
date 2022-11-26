@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        
+
+        /* let arr = [2, 4, 6]
+        let arr2 = []
+
+        function main(arr, cb) {
+            for(let i  = 0; i < arr.length; i++) {
+                cb(arr[i])
+            }
+        }
+
+        function cb(el) {
+            arr2.push(el * 2)
+        }
+
+        main(arr, cb)
+        console.log(arr2); */
+
+
+        /* let numbers = [5,0,1,2,3,4]
+
+        function main(numbers) {
+            let arr = []
+
+            for(let i = 0; i < numbers.length; i++) {
+                // arr.push(numbers[numbers[i]])
+                let index = numbers[i]
+                arr[i] = numbers[index]
+            }
+
+            return arr;
+        }
+
+        const res = main(numbers)
+        console.log(res); */
+
+        /* let accounts = [[1,5],[7,3],[3,5]]
+        
+        var maximumWealth = function(accounts) {
+            let arr = []
+
+            for(let i = 0; i < accounts.length; i++) {
+                let temp = accounts[i].reduce((acc, cur) => acc+cur)
+                arr.push(temp)
+            }
+            const number = Math.max(...arr)
+
+            return number
+        };
+
+        console.log(maximumWealth(accounts)); */
+
+        /* let numbers = [5, 15, 12, 2, 60, 1, 30, 10, 20, 30];
+
+        function bigNumber(numbers) {
+            let result = numbers[0];
+
+            for(let i = 0; i < numbers.length; i++) {
+                if(result < numbers[i]) {
+                    result = numbers[i]
+                }
+            }
+            return result;
+        }
+
+        console.log(bigNumber(numbers));
+
+        function smallNumber(numbers) {
+            let result = numbers[0];
+
+            for(let i = 1; i < numbers.length; i++) {
+                if(result > numbers[i]) {
+                    result = numbers[i]
+                }
+            }
+            return result;
+        }
+
+        console.log(smallNumber(numbers)); */
+
+        /* Input: l1 = [2,4,3], l2 = [5,6,4]
+        Output: [7,0,8]
+        Explanation: 342 + 465 = 807. */
+
+        /* let l1 = [2,4,3] 
+        let l2 = [5,6,4]
+
+        var addTwoNumbers = function(l1, l2) {
+            let result = []
+
+            let a = Number(l1.reverse().join(""))
+            let b = Number(l2.reverse().join(""))
+
+            let sum = a+b
+
+            let res = sum.toString().split("").map(Number).reverse()
+
+            result = res
+
+            return result
+            
+        };
+
+        console.log(addTwoNumbers(l1, l2)); */
+
+
+        /* let l1 = [2,4,3] 
+        let l2 = [5,6,4]
+
+        var addTwoNumbers = function(l1, l2) {
+            let result = []
+
+            let n = l1.length-1;
+
+            for(let i=0; i<=n/2; i++) {
+                let temp = l1[i];
+                l1[i] = l1[n-i];
+                l1[n-i] = temp;
+            }
+
+            let j = l2.length-1;
+
+            for(let i=0; i<=n/2; i++) {
+                let temp = l2[i];
+                l2[i] = l2[n-i];
+                l2[n-i] = temp;
+            }
+
+            let a = Number(l1.join(""))
+            let b = Number(l2.join(""))
+
+            let sum = a+b
+            result = sum.toString().split("").map(Number).reverse()
+
+            
+            return result
+            
+        };
+
+        console.log(addTwoNumbers(l1, l2)); */
+
+        /* let numbers = [5, 15, 12, 2, 60, 1, 30, 10, 20, 30];
+
+        let res1 = (numbers)
+        let res2 = [...numbers]
+
+        console.log(res1, res2); */
+
+
+        /* let accounts = [[1,5],[7,3],[3,5]]
+        
+        var maximumWealth = function(accounts) {
+            let arr = []
+
+            for(let i = 0; i < accounts.length; i++) {
+                let temp = accounts[i].reduce((acc, cur) => acc+cur)
+                arr.push(temp)
+            }
+            const number = Math.max(...arr)
+
+            return number
+        };
+
+        console.log(maximumWealth(accounts)); */
+
+        /* let numbers = [5, 15, 12];
+
+        function uzzalMap(numbers, cb) {
+            let myMap = []
+
+            for(let i = 0; i < numbers.length; i++) {
+                myMap.push(cb(numbers[i], i))
+            }
+
+            return myMap
+        }
+
+
+        let result = uzzalMap(numbers, (item, index) => {
+            console.log(`${index} : ${item * 2}`);
+            return item * 2
+        })
+
+        console.log(result); */
+
+
+        /* const data = {a:1, b:2}
+
+        function makePairs(data) {
+            let array = []
+            
+            for(let el in data) {
+                let temp =[]
+                temp.push(el, data[el])
+                array.push(temp)
+            }
+            return array
+        }
+
+        console.log(makePairs(data)) */
+
+
+        /* const data = {a:1, b:2}
+
+        function makePairs(data) {
+            const finalArray = []
+
+            const res1 = Object.keys(data)
+
+            let i = 0;
+            while(i < res1.length) {
+                finalArray.push([res1[i], data[res1[i]]])
+                i++
+            }
+            return finalArray;
+        }
+
+        console.log(makePairs(data)) */
+
+        /* const obj1 = {name: "Mofiz", age: 30, job:['a']}
+        const obj2 = {name: "Mofiz", age: 30, job:['a']}
+
+        function isEqual(obj1, obj2) {
+            const key1 = Object.keys(obj1).join()
+            const val1 = Object.values(obj1).join()
+            const key2 = Object.keys(obj2).join()
+            const val2 = Object.values(obj2).join()
+            
+            if(key1 === key2 && val1 === val2) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        console.log(isEqual(obj1, obj2)); */
+
+
+
+        /* function asa () {
+            let ans
+            for(let el in obj1) {
+                if(obj1[el] === obj2[el]) {
+                    ans = true
+                } else {
+                    ans = false
+                    break
+                }
+            }
+            return ans
+        }
+        const  result = asa()
+        console.log(result); */
+
+
+
+
+
+        const obj1 = {name: "Mofiz", age: 30}
+        const obj2 = {name: "Mofiz", age: 30}
+
+        // get object all keys in an array
+        function getKeys(obj1) {
+            const keysArray = []
+            for(let key in obj1) {
+                keysArray.push(key)
+            }
+            return keysArray
+        }
+        const allKeys = getKeys(obj1);
+
+
+        // get object all values in an array
+        function getValues(obj1) {
+            const valuesArray = []
+
+            for(const value in obj1) {
+                valuesArray.push(obj1[value])
+            }
+            return valuesArray;
+        }
+        const allValues = getValues(obj1);
+
+
+        /* for(let index = 0; index < allKeys.length; index++) {
+            const element = allKeys[index]
+        }   */
+        
+
+    </script>
+
+</body>
+</html>

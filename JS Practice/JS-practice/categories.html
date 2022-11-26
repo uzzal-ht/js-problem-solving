@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        const array = [
+            {
+                id: 1,
+                title: "title no 01",
+                tags: ["development", "design", "branding"],
+                categories: {
+                    name: "development",
+                    slug: "development",
+                },
+            },
+            {
+                id: 2,
+                title: "title no 02",
+                tags: ["business", "branding", "management"],
+                categories: {
+                    name: "business",
+                    slug: "business",
+                },
+            },
+            {
+                id: 3,
+                title: "title no 03",
+                tags: ["business", "branding", "management"],
+                categories: {
+                    name: "business",
+                    slug: "business",
+                },
+            },
+        ];
+
+
+        function getTagList(data) {
+            let finalData = []
+
+            let tagList = data.map(item => {
+                return item.tags
+            }).flat()
+
+            
+            tagList.forEach(item => {
+                let obj = {
+                    count: 1,
+                    name: item
+                }
+                
+                finalData.push(obj)
+            });
+
+
+            return finalData;
+        }
+
+        console.log(getTagList(array));
+
+    </script>
+
+</body>
+</html>

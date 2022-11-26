@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        /* let age = 50
+
+        let pro = new Promise((resolve, reject) => {
+            if(age >= 50) {
+                resolve("You are an old man")
+            } else if(age >= 18) {
+                resolve("You are adult")
+            } else {
+                reject("You are a baby")
+            }
+        })
+
+        pro
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            }) */
+
+
+        
+
+/* const said = (url, cb) => {
+    cb(url);
+};
+
+said("/get_user", (userData) => {
+    console.log(userData)
+    said("/get_blog", (blogData) => {
+        console.log(blogData)
+    });
+});
+        */        
+       
+
+
+
+        /* function MyPromise(url) {
+            this.then = function(cb){
+                cb(url)
+                return this
+            }
+        }
+
+        let fetchFunc = function(url){
+            return new MyPromise((resolve) => {
+                resolve(url)
+            })
+        }
+
+        fetchFunc("/get_user")
+        .then((res) => {
+            console.log(res);
+        }) */
+        
+        let arr = [1, 2, 3, 9, 65,96, 63, 3, 5]
+
+        function mid(arr) {
+            let temp = Math.floor(arr.length / 2)
+
+            console.log(arr[temp])
+        }
+
+        mid(arr)
+        
+
+</script>
+
+</body>
+</html>

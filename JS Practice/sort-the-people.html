@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        let names = ["Alice","Bob","Bob"]
+        let heights = [155,185,150]
+
+        var sortPeople = function(names, heights) {
+            let result = []
+            let sortHeights = [...heights].sort((a, b) => b-a)
+
+            sortHeights.forEach(item => {
+                result.push(names[heights.indexOf(item)])
+            })
+
+            return result
+        };
+
+        console.log(sortPeople(names, heights));
+
+    </script>
+
+</body>
+</html>

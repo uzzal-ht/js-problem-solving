@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        [50, 6, 7, 8, 9, 50, 35]
+        
+        /* let array = [5, 6, 7, 8, 9, 50, 35]
+        
+        function myFunc(array, callback) {
+            let newArray = [];
+            for (let num = 0; num < array.length; num++) {
+                const element = array[num];
+                if(callback(element)){
+                    newArray.push(element)
+                }
+            }
+            return newArray;
+        }
+
+        function calculate(element) {
+            return element % 2 === 1;
+        }
+        function calculateTwo(element, i) {
+            return element % 2 === 0;
+        }
+
+        let result = myFunc(array, calculate)
+        let resultTwo = myFunc(array, calculateTwo)
+        console.log(result);
+        console.log(resultTwo); */
+
+
+
+        let obj = [
+            {
+                name: "Reza",
+                position: "Coder",
+                age: 20
+            },
+            {
+                name: "Jewel",
+                position: "Gatsby Developer",
+                age: 18
+            },
+            {
+                name: "Hasan",
+                position: "Developer",
+                age: 19
+            }
+        ]
+
+
+        function myFunc(obj) {
+            let nameList = [];
+            for(let item in obj) {
+                nameList.push(obj[item].name);
+            }
+            return nameList;
+        }
+
+        let result = myFunc(obj)
+
+        console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

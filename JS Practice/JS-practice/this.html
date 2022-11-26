@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        let product = [
+            {
+                id: 1,
+                name: "this is product fashion",
+                price: 10,
+                categoryId: 101
+            },
+            {
+                id: 2,
+                name: "this is product design",
+                price: 15,
+                categoryId: 102
+            },
+            {
+                id: 3,
+                name: "this is product fashion",
+                price: 20,
+                categoryId: 101
+            },
+            {
+                id: 4,
+                name: "this is product lifestyle",
+                price: 20,
+                categoryId: 103
+            },
+            {
+                id: 5,
+                name: "this is product lifestyle",
+                price: 25,
+                categoryId: 103
+            }
+        ]
+
+        let categories = [
+            {
+                id: 101,
+                catName: "fashion"
+            },
+            {
+                id: 102,
+                catName: "design"
+            },
+            {
+                id: 103,
+                catName: "lifestyle"
+            }
+        ]
+        
+
+        /*let target = "lifestyle"
+
+
+        let getId = categories.find(item => {
+            return item.catName === target
+        })
+
+        let result = product.filter(item => {
+            return item.categoryId === getId.id
+        })
+
+        console.log(result); */
+
+
+        let target = "fashion"
+
+        let obj = {}
+
+        categories.forEach(item => {
+            if(item.catName === target) {
+                obj.catName = item.catName,
+                obj.id = item.id
+            }
+        })
+
+       let result = []
+
+       product.forEach(item => {
+            if(item.categoryId === obj.id) {
+                result.push(item)
+            }
+       })
+
+       console.log(result);
+
+
+        /* const myObj = {
+            counter: 0,
+            increment() {
+                this.counter++
+                return this
+            }
+        }
+        
+
+        let result = myObj.increment()
+
+        console.log(result); */
+
+        let candies = [12,1,12]
+        let extraCandies = 10
+        
+        var kidsWithCandies = function(candies, extraCandies) {
+            
+            let bigNumber = 0
+
+            for(let i = 0; i < candies.length; i++) {
+                if(bigNumber < candies[i]) {
+                    bigNumber = candies[i]
+                }
+            }
+
+            let boolean = candies.map(el => el + extraCandies).map(el => {
+                return el >= bigNumber
+            })
+
+            return boolean
+        };
+
+        console.log(kidsWithCandies(candies, extraCandies));
+
+
+
+    </script>
+
+</body>
+</html>

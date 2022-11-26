@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .card {
+            text-align: center;
+        }
+        .card li {
+            display: inline-block;
+            background-color: #f8f8f8;
+            padding: 10px 15px;
+            text-align: center;
+            text-transform: capitalize;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .card li.active {
+            background-color: green;
+            color: #fff;
+        }
+    </style>
+
+</head>
+<body>
+
+    <ul class="card">
+        <li class="active">red</li>
+        <li>green</li>
+        <li>blue</li>
+        <li>black</li>
+    </div>
+
+    <script>
+        
+        let list = document.querySelectorAll(".card li")
+
+        list.forEach(el => {
+            el.addEventListener("click", function() {
+                el.classList.add("active")
+            })
+        })
+
+
+        
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

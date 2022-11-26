@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .block-wrapper {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: darkslategray;
+        }
+        .block {
+            text-align: center;
+            background-color: lightgrey;
+            border-radius: 10px;
+            width: 250px;
+            height: 100px;
+            margin: auto;
+            padding: 20px;
+        }
+        .block-inner {
+            color: red;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            align-items: center;
+            background-color: #222222;
+            height: 100%;
+        }
+        .time {
+            font-size: 24px;
+        }
+        .format {
+            font-size: 12px;
+            padding-left: 5px;
+            color: #f9f9f9;
+        }
+    </style>
+
+<body>
+
+
+    <div class="block-wrapper">
+        <div class="block">
+            <div class="block-inner">
+                <h1 class="time">Test 02</h1>
+                <h6 class="format">AM</h6>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        
+        
+        const dateContainer = document.querySelector('.time');
+        const formatContainer = document.querySelector('.format');
+      
+
+        function digitalClock() {
+            let date = new Date();
+
+            let hours = `${date.getHours()}`.padStart(2, 0);
+            let minutes = `${date.getMinutes()}`.padStart(2, 0);
+            let seconds = `${date.getSeconds()}`.padStart(2, 0);
+            let format = hours > 12 ? 'PM' : 'AM';
+
+
+            /* if(hours === 0) {
+                hours = 12;
+            }
+
+            if(hours > 12) {
+                hours = hours - 12;
+                format = 'PM'
+            } */
+
+            /* hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds; */
+
+            let finalTime = `${hours} : ${minutes} : ${seconds}`
+
+            dateContainer.textContent = finalTime;
+            formatContainer.textContent = format;
+
+            setInterval(digitalClock, 1000)
+        }
+
+        digitalClock();
+
+
+    </script>
+</body>
+</html>

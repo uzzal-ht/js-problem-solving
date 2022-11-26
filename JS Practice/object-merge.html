@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        const courses = [
+            {
+                "id": 1,
+                "title": "Successful Negotiation: Master Your Negotiating Skills",
+                "slug": "successful-negotiation-master-your-negotiating-skills",
+                "thumbnail": "/images/courses/courses-1.jpg",
+                "label": "All labels",
+                "instructorID": 10,
+                "price": 39.00,
+                "rating": 5,
+            },
+            {
+                "id": 2,
+                "title": "Time Management Mastery: Do More, Stress Less",
+                "slug": "time-management-mastery-do-more-stress-less",
+                "thumbnail": "/images/courses/courses-2.jpg",
+                "label": "Beginner",
+                "instructorID": 20,
+                "price": 29.99,
+                "rating": 4,
+            },
+            {
+                "id": 3,
+                "title": "Angular–The Complete Guide (2020 Edition)",
+                "slug": "angular-the-complete-guide-2020-edition",
+                "thumbnail": "/images/courses/courses-3.jpg",
+                "label": "Intermediate",
+                "instructorID": 30,
+                "price": 49.00,
+                "rating": 5,
+            },
+            {
+                "id": 4,
+                "title": "Consulting Approach to Problem Solving",
+                "slug": "consulting-approach-to-problem-solving",
+                "thumbnail": "/images/courses/courses-4.jpg",
+                "label": "All labels",
+                "instructorID": 40,
+                "price": 0,
+                "rating": 4,
+            }
+        ]
+
+        const instructor = [
+            {
+                "id": 10,
+                "name": "Jhon",
+                "enroll": 10,
+                "courses": 6,
+                "students": 150,
+                "activeCourse": 4,
+                "completeCourse": 3,
+                "reviews": 15,
+                "phoneNumber": 123456789,
+                "rating": 5,
+                "jobTitle": "photographer",
+            },
+            {
+                "id": 20,
+                "name": "Mofiz",
+                "enroll": 12,
+                "courses": 8,
+                "students": 100,
+                "activeCourse": 4,
+                "completeCourse": 3,
+                "reviews": 15,
+                "phoneNumber": 9876543210,
+                "rating": 4,
+                "jobTitle": "photographer",
+            },
+            {
+                "id": 30,
+                "name": "Tomi",
+                "enroll": 12,
+                "courses": 8,
+                "students": 100,
+                "activeCourse": 4,
+                "completeCourse": 3,
+                "reviews": 15,
+                "phoneNumber": 9876543210,
+                "rating": 4,
+                "jobTitle": "photographer",
+            },
+            {
+                "id": 40,
+                "name": "Maria",
+                "enroll": 12,
+                "courses": 8,
+                "students": 100,
+                "activeCourse": 4,
+                "completeCourse": 3,
+                "reviews": 15,
+                "phoneNumber": 9876543210,
+                "rating": 4,
+                "jobTitle": "photographer",
+            }
+        ]
+        
+
+        const courseResult = courses.map(course => {
+            return course.instructorID == instructor.find(el => el.id)
+        })
+
+
+
+        console.log(courseResult);
+        
+    </script>
+</body>
+</html>

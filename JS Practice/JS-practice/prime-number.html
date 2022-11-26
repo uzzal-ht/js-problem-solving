@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        function main(num) {
+            let result = []
+                let isTrue = true
+                for(let i = 1; i <= num; i++) {
+                    for(let j = 2; j < num; j++) {
+                        if(i % j === 0) {
+                            isTrue = false
+                            break
+                        } else {
+                            result.push(i)
+                        }
+                    }
+                }
+
+            return result
+        }
+
+        console.log(main(30));
+
+    </script>
+
+</body>
+</html>

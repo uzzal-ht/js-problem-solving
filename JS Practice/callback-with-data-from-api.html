@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        
+        const courses = [
+            {
+                title: "Successful Negotiation: Master Your Negotiating Skills",
+                students: 15,
+                label: "Bigener"
+            },
+            {
+                title: "Time Management Mastery: Do More, Stress Less",
+                students: 20,
+                label: "Medium"
+            }
+        ]
+
+
+        function course() {
+            let newCourse = []
+            for (const item of courses) {
+                console.log(item);
+            }
+            return newCourse;
+        }
+
+
+        function newCourse(item) {
+            setTimeout(function() {
+                courses.push(item)
+            }, 2000)
+        }
+
+
+
+        course()
+
+        newCourse({title: "This is new title", students: 23, label: "Advanced"})
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

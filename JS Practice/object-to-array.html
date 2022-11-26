@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <h1 style="text-align: center">This is test page</h1> -->
+
+    <script>
+
+        // How to convert an object into array in javascript.
+
+        // 1) For in loop
+        // 2) Object.keys() method
+        // 3) Object.entries() method
+
+
+        // 1) For in loop
+        /*const colors = {
+            color1:"red", 
+            color2:"green", 
+            color3:"orange", 
+            color4:"black", 
+            color5:"white"
+        }
+        let result = []
+
+        for (let color in colors) {
+            result.push([color, colors[color]])
+        }
+
+        console.log(result)*/
+
+
+        // How to create an array with only the specified key 
+        /*const colors = {
+            color1:"red", 
+            color2:"green", 
+            color3:"orange", 
+            color4:"black", 
+            color5:"white"
+        }
+        const result = Object.keys(colors)
+
+        console.log(result)*/
+
+
+        // How to create an array with only the specified values
+        /*const colors = {
+            color1:"red", 
+            color2:"green", 
+            color3:"orange", 
+            color4:"black", 
+            color5:"white"
+        }
+        const result = Object.values(colors)
+
+        console.log(result)*/
+
+
+        // 2) Object.keys() method
+        /*const colors = {
+            color1:"red", 
+            color2:"green", 
+            color3:"orange", 
+            color4:"black", 
+            color5:"white"
+        }
+        const result = Object.keys(colors).map(el => {
+            return [el, colors[el]];
+        })
+
+        console.dir(result)*/
+
+
+        // 3) Object.entries() method
+        /*const colors = {
+            color1:"red", 
+            color2:"green", 
+            color3:"orange", 
+            color4:"black", 
+            color5:"white"
+        }
+
+        const result = Object.entries(colors) 
+
+        console.dir(result)*/
+        
+        
+    </script>
+</body>
+</html>

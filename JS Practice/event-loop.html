@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        console.log("message 1");
+
+        setTimeout(() => {
+            console.log('Message 2');
+        },1000)
+
+
+        setTimeout(() => {
+            for(let i = 0; i < 1000; i++) {
+                console.log("Message 3");
+            }
+        },0)
+
+        setTimeout(() => {
+            console.log('Message 4');
+        },0)
+
+        console.log("message 5");
+
+    </script>
+
+</body>
+</html>

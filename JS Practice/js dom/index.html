@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+        .list {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="section-wrapper">
+        <div class="list-wrapper">
+            <ul>
+                <li class="list home">
+                    <a href="#">Home</a>
+                </li>
+                <li class="list about">
+                    <a href="#">About</a>
+                </li>
+                <li class="list contact">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <button class="btn btn-home">home</button>
+        <button class="btn btn-about">about</button>
+        <button class="btn btn-contact">contact</button>
+    </div>
+
+
+    <script>
+        const btns = document.querySelectorAll('.btn');
+        const lists = document.querySelectorAll('.list')
+
+
+        btns.forEach(item => {
+            item.addEventListener("click", function() {
+                if(item.classList.contains("btn-about")) {
+                    lists.forEach(el => {
+                        if(el.classList.contains("about")) {
+                            el.classList.add("about-two")
+                            console.log(el)
+                        }
+                    })
+                }
+            })
+        })
+
+        /*const listWrapper = document.querySelectorAll('.list'); 
+
+         btn.addEventListener('click', () => {
+            listWrapper.forEach(el => el.style.backgroundColor = 'pink')
+        }) */
+
+        /*const message = document.createElement('div')
+        message.classList.add('test-box')
+
+        message.innerHTML = 'this is test paragraph <strong>Javascript</strong>'
+
+        const body = document.querySelector('body')
+        
+        body.appendChild(message)
+
+        console.log(getComputedStyle(message).height);*/
+        
+        
+
+    </script>
+</body>
+</html>

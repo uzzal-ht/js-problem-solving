@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        
+
+        class Person {
+            constructor(name, roll, debut) {
+                this.name = name;
+                this.position = roll;
+                this.debut = debut;
+                this.age = function (age) {
+                    let date = new Date();
+                    let currentAge = date.getFullYear() - age;
+                    return currentAge;
+                };
+            }
+        }
+
+        const player1 = new Person("Sakib Al Hasan", "All-Rounder", 2005);
+        const player2 = new Person("Mushfiqur Rahim", "Batsman", 2006);
+
+        console.log(
+            `${player1.name} is ${player1.age(1980)} years old & he is a ${
+                player1.position
+            } & he play started in ${player1.debut}`
+        );
+        console.log(
+            `${player2.name} is ${player2.age(1990)} years old & he is a ${
+                player2.position
+            } & he play started in ${player2.debut}`
+        );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

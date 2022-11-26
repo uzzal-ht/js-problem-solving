@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <h1 style="text-align: center">This is test page</h1> -->
+
+    <script>
+
+        // How to convert an array into object in javascript.
+
+        // 1) For loop
+        // 2) Object.assign method
+        // 3) Spread Operator
+
+
+        // 1) For loop
+        /*const colors = ["red", "green", "orange", "black", "white"]
+        const myObj = {}
+
+        for (var i = 0; i < colors.length; i++) {
+             myObj[i] = colors[i];
+        }
+
+        console.log(myObj)*/
+
+
+
+        // 2) Object.assign method
+        /*const colors = ["red", "green", "orange", "black", "white"]
+        const myObj = Object.assign({}, colors)
+
+        console.dir(myObj)*/
+
+
+        // 3) Spread Operator
+        const colors = ["red", "green", "orange", "black", "white"]
+        const myObj = {...colors}
+
+        console.dir(myObj)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+}
+.main-wrapper {
+    background-color: #f8f8f8;
+    width: 800px;
+    padding: 30px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.accordion-card {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.accordion-card:last-child {
+    margin-bottom: 0;
+}
+.accordion-head {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.accordion-content p {
+    color: #777;
+}
+
+.accordion-content {
+    display: none;
+}
+.accordion-card.active .accordion-content {
+    display: block;
+}
+.accordion-card.active .accordion-head {
+    font-weight: 600;
+}

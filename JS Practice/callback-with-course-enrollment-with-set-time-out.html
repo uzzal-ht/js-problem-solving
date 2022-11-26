@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        
+        const paymentSuccess = true;
+        const marks = 80;
+
+        function enroll(callback) {
+            console.log("1. Enrollment is in progress");
+
+            setTimeout(function() {
+                if(paymentSuccess) {
+                    console.log("2. Payment successfully done!");
+                    callback()
+                } else {
+                    console.log("2. Payment failed!");
+                }
+            }, 1000)
+        }
+
+        function progress(callback) {
+            console.log("3. Course on progress");
+
+            setTimeout(function() {
+                if(marks >= 80) {
+                    console.log("4. You have passed!");
+                    callback()
+                } else {
+                    console.log("4. You could not get enough marks to get the certificates");
+                }
+            }, 1000)
+        }
+
+        function getCertificate() {
+            console.log("5. Preparing your certificate");
+
+            setTimeout(function() {
+                console.log("6. Congratulations! you got the certificate");
+            }, 1000)
+        }
+        
+
+        enroll(function() {
+            progress(getCertificate)
+        })
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

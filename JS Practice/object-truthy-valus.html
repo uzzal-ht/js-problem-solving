@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        let obj = {
+            hello1: "jowel",
+            hello2: 10,
+            hello3: "",
+            hell4: true,
+            hello5: false
+        }
+
+
+        for(let el in obj) {
+            if(!obj[el]) {
+                delete obj[el]
+            }
+            
+        }
+
+        console.log(obj);
+        
+
+    </script>
+
+</body>
+</html>

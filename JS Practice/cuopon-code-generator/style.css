@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+*, 
+*:before, 
+*:after {
+    box-sizing: border-box;
+    outline: none;
+}
+body {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+li {
+    list-style: none;
+}
+.form-wrapper {
+    width: 600px;
+    background-color: #C5C5C5;
+    padding: 30px;
+    border-radius: 10px;
+}
+.item {
+    margin-bottom: 20px;
+}
+.item label {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 18px;
+}
+.item input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+}
+.generate-btn {
+    padding: 10px 30px;
+    background-color: #333;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.coupon-list {
+    background: #ffffff;
+    margin-top: 20px;
+    padding: 20px;
+    display: none;
+    flex-wrap: wrap;
+    gap: 15px 20px;
+    border-radius: 5px;
+}
+.coupon-list li {
+    list-style: none;
+    font-size: 20px;
+    display: inline-block;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        
+        
+
+        function one(a,b) {
+            console.log("this message from function one");
+            console.log(a+b);
+        }
+
+        function two(test) {
+            console.log("this message from function two");
+            
+            setTimeout(function(){
+                console.log("this message by set time out function inside function two");
+                test()
+            }, 500)
+        }
+
+        function three() {
+            console.log("this message from function three");
+        }
+
+        function four(test2) {
+            setTimeout(function() {
+                console.log("this message from function four");
+                test2(10,5)
+            }, 5000)
+        }
+
+
+        four(one)
+        // one()
+        two(three)
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

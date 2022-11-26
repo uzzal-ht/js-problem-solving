@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 style="text-align: center">This is test page</h1>
+
+    <script>
+
+        const course = {
+                id: 13,
+                title: "Internationally Accredited Diploma in Weight Loss",
+                thumbnail: "/images/courses/courses-13.jpg",
+                label: "Beginner",
+                instructor: "Uzzal",
+                "price": 50.00,
+                rating: 4,
+                categories: {
+                    name: "music",
+                    slug: "music",
+                    icon: {
+                        iconOne: "/images/svg/music.svg",
+                        thumbnail: "/images/category/music.jpg",
+                    },
+                },
+                featured: true,
+                trending: true,
+                popularity: false
+            }
+
+            const {title: name,  price = 20, instructor: author, categories: {name: anotherName, slug, icon: {iconOne, thumbnail}}} = course;
+
+            console.log(name, price, author, anotherName, slug, iconOne, thumbnail);
+        
+    </script>
+</body>
+</html>
