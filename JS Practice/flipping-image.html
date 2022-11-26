@@ -10,10 +10,23 @@
     
     <script>
         
-        const image = [[1,1,0],[1,0,1],[0,0,0]]
+        const image = [[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]]
 
         var flipAndInvertImage = function(image) {
-            
+            const reverseArray = image.map(item => {
+                return item.reverse()
+            })
+
+            const result = reverseArray.map(item => {
+                return item.map(element => {
+                    if(element === 0) {
+                        return element = 1
+                    } else {
+                        return element = 0
+                    }
+                });
+            })
+            return result
         };
 
         console.log(flipAndInvertImage(image));
