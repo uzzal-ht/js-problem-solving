@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+        .card-wrapper {
+            max-width: 700px;
+            margin: auto;
+        }
+        .card-item {
+            border: 1px solid #eee;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            width: 100%;
+            cursor: pointer;
+            padding: 13px;
+        }
+        .card-header {
+            margin: 0;
+        }
+        .card-body {
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .card-body.active {
+            height: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+        
+    </style>
+
+</head>
+<body>
+    
+    <div class="card-wrapper">
+        <div class="card-item">
+            <h3 class="card-header">
+                <button type="button" class="btn">
+                    Card header 01
+                </button>
+            </h3>
+            <div class="card-body active">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nostrum nam, voluptas quae itaque quibusdam provident nihil sequi in numquam, culpa alias. Ratione ipsa unde excepturi</p>
+            </div>
+        </div>
+        <div class="card-item">
+            <h3 class="card-header">
+                <button type="button" class="btn">
+                    Card header 02
+                </button>
+            </h3>
+            <div class="card-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nostrum nam, voluptas quae itaque quibusdam provident nihil sequi in numquam, culpa alias. Ratione ipsa unde excepturi</p>
+            </div>
+        </div>
+        <div class="card-item">
+            <h3 class="card-header">
+                <button type="button" class="btn">
+                    Card header 03
+                </button>
+            </h3>
+            <div class="card-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nostrum nam, voluptas quae itaque quibusdam provident nihil sequi in numquam, culpa alias. Ratione ipsa unde excepturi</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        const buttons = document.querySelectorAll(".btn")
+        const cardItems = document.querySelectorAll(".card-item")
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", function() {
+                cardItems.forEach(item => {
+                    item.querySelector(".card-body").classList.remove("active")
+                    if(item.querySelector(".btn") === btn) {
+                        item.querySelector(".card-body").classList.toggle("active")
+                    }
+                })
+            })
+        })
+        
+
+    </script>
+</body>
+</html>

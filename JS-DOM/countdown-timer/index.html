@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .time-wrapper {
+            max-width: 700px;
+            margin: auto;
+            border: 1px solid #eee;
+            padding: 50px;
+        }
+        .display {
+            display: flex;
+            justify-content: center;
+        }
+        .display h2 {
+            margin: 0 40px;
+            text-align: center;
+        }
+        .display h2 span {
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .input-wrapper {
+            margin-top: 60px;
+        }
+        .time-input {
+            margin-right: 5px;
+        }
+        .time-input label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .time-input input {
+            font-size: 20px;
+            padding: 10px;
+            width: 100%;
+        }
+        .form-inner {
+            display: flex;
+        }
+        .btn-wrapper {
+            margin-top: 30px;
+            text-align: center;
+        }
+        button {
+            padding: 6px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    
+    <div class="time-wrapper">
+        <div class="display">
+            <h2 class="displayHrs">
+                <strong>0</strong>
+                <span>Hour</span>
+            </h2>
+            <h2 class="displayMin">
+                <strong>0</strong>
+                <span>Minutes</span>
+            </h2>
+            <h2 class="displaySec">
+                <strong>0</strong>
+                <span>Seconds</span>
+            </h2>
+        </div>
+
+        <div class="input-wrapper">
+            <form class="form-inner">
+                <div class="time-input">
+                    <label>Hours</label>
+                    <input type="number" class="hours">
+                </div>
+                <div class="time-input">
+                    <label>Minutes</label>
+                    <input type="number" class="minutes">
+                </div>
+                <div class="time-input">
+                    <label>Seconds</label>
+                    <input type="number" class="seconds">
+                </div>
+            </form>
+        </div>
+        <div class="btn-wrapper">
+            <button type="button" class="start">Start</button>
+            <button type="button" class="pause">Pause</button>
+            <button type="button" class="reset">Reset</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        
+        const displayHrs = document.querySelector(".displayHrs strong")
+        const displayMin = document.querySelector(".displayMin strong")
+        const displaySec = document.querySelector(".displaySec strong")
+
+        const inputHrs = document.querySelector(".hours")
+        const inputMin = document.querySelector(".minutes")
+        const inputSec = document.querySelector(".seconds")
+
+        const btnStart = document.querySelector(".start")
+        const btnPause = document.querySelector(".pause")
+        const btnReset = document.querySelector(".reset")
+
+        let totalSeconds = localStorage.getItem('totalSeconds');
+        let myInterval
+
+        
+        countDownFun(totalSeconds)
+
+        function secondDivider(totalSecond) {
+            let remainder = totalSecond % (60 * 60);
+            const hour = Math.floor(totalSecond / (60 * 60));
+            const minute = Math.floor(remainder / 60);
+            const second = remainder % 60;
+            const output = {
+                hour,
+                minute,
+                second,
+            };
+
+            return output;
+        }
+
+        function countDownFun(totalSeconds) {
+            let current = secondDivider(totalSeconds)
+
+            displayHrs.innerHTML = current.hour
+            displayMin.innerHTML = current.minute
+            displaySec.innerHTML = current.second
+        }
+
+        
+
+        btnStart.addEventListener("click", function() {
+
+            if(inputHrs.value !== '' || inputMin.value !== '' || inputSec.value !== '') {
+                totalSeconds = ((Number(inputHrs.value) * 60) * 60) + (Number(inputMin.value) * 60) + Number(inputSec.value)
+            }
+            
+            myInterval = setInterval(function() {
+                countDownFun(totalSeconds)
+                if(totalSeconds < 1) {
+                    clearInterval(myInterval)
+                }
+                localStorage.setItem('totalSeconds', totalSeconds);
+                totalSeconds--
+            }, 1000)
+
+            inputHrs.value = inputMin.value = inputSec.value = ""
+            btnStart.disabled = true
+        })
+
+        btnReset.addEventListener("click", function() {
+            clearInterval(myInterval)
+            localStorage.removeItem('totalSeconds');
+            totalSeconds = 0
+            countDownFun(totalSeconds)
+            btnStart.disabled = false
+        })
+
+        btnPause.addEventListener("click", function() {
+            clearInterval(myInterval)
+            btnStart.disabled = false
+        })
+
+
+    </script>
+</body>
+</html>

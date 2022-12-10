@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        
+        const word1 = ["abc", "d", "defg"]
+        const word2 = ["abcddefg"]
+
+        var arrayStringsAreEqual = function(word1, word2) {
+            let str1 = word1.join("").toLowerCase()
+            let str2 = word2.join("").toLowerCase()
+
+            return str1 === str2
+        };
+
+        console.log(arrayStringsAreEqual(word1, word2));
+
+    </script>
+</body>
+</html>

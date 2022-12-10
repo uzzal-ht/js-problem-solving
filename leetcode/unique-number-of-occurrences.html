@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+
+    const arr = [1,2]
+
+    var uniqueOccurrences = function(arr) {
+        /* let obj = {}
+        arr.forEach(item => {
+            obj[item] = (obj[item] || 0) + 1
+        });
+
+        let res = Object.values(obj)
+
+        return new Set(res).size === res.length */
+
+
+        /* let obj = {}
+        arr.forEach(item => {
+            if(obj.hasOwnProperty(item)) {
+                obj[item] = obj[item] += 1
+            } else {
+                obj[item] = 1
+            }
+        });
+
+        let res = Object.values(obj)
+        
+        let isTrue = true
+        for(let i = 0; i < res.length; i++) {
+            for(let j = i+1; j < res.length; j++) {
+                if(res[i] === res[j]){
+                    isTrue = false
+                }
+            }
+        }
+        return isTrue */
+
+
+
+        const map = new Map();
+        const map1 = new Map();
+
+        for (let num of arr) {
+            map.set(num, (map.get(num) || 0) + 1);
+        }
+        for (let it of [...map.values()]) {
+            if (map1.has(it)) return false;
+            map1.set(it, true);
+        }
+        return true;
+
+    };
+
+    console.log(uniqueOccurrences(arr));
+        
+
+    </script>
+</body>
+</html>

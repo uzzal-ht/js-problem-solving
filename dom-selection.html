@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+        li {
+            list-style: none;
+        }
+        .list {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        .list a.active{
+            color: red;
+        }
+        button {
+            cursor: pointer;
+        }
+        .menu-lists li {
+            display: inline-block;
+            margin-right: 30px;
+            position: relative;
+        }
+        .menu-lists li a {
+            color: #222;
+        }
+        .menu-lists li a:hover {
+            color: #f00;
+        }
+        .dropdown-menu {
+            width: 150px;
+            background-color: #aaa;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 20px 30px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s;
+            transform: translateY(30px);
+        }
+        .dropdown-menu li {
+            display: block;
+            text-align-last: left;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-menu li a {
+            color: #fff;
+        }
+
+        .menu-lists li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(10px);
+        }
+    </style>
+
+</head>
+<body>
+    <!-- <div class="section-wrapper">
+        <div class="list-wrapper">
+            <ul>
+                <li class="list" data-ref="home">
+                    <a href="#">Home</a>
+                </li>
+                <li class="list" data-ref="about">
+                    <a href="#">About</a>
+                </li>
+                <li class="list" data-ref="contact">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <button class="btn" data-target="home">home</button>
+        <button class="btn" data-target="about">about</button>
+        <button class="btn" data-target="contact">contact</button>
+    </div> -->
+
+
+    <script>
+        "use strict"
+        /* const buttons = document.querySelectorAll('.btn');
+        const lists = document.querySelectorAll('.list')
+
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", function() {
+                const target = this.dataset.target
+                lists.forEach(li => {
+                    if(li.dataset.ref === target) {
+                        li.classList.add(target)
+                    }
+                })
+            })
+        }) */
+
+        /* buttons.forEach(item => {
+            item.addEventListener("click", function() {
+                if(item.classList.contains("btn-about")) {
+                    lists.forEach(el => {
+                        if(el.classList.contains("about")) {
+                            el.classList.add("about-two")
+                        }
+                    })
+                }
+            })
+        }) */
+
+        /* lists.forEach(item => {
+            item.addEventListener("click", function() {
+                lists.forEach(el => {
+                    el.classList.remove("active")
+                })
+                this.classList.add("active")
+            })
+        }) */
+
+        /* lists.forEach(item => {
+            item.addEventListener("click", function() {
+                lists.forEach(el => {
+                    el.querySelector("a").classList.remove("active")
+                })
+                this.querySelector("a").classList.add("active")
+            })
+        }) */
+
+        const menus = [
+            {
+                name: "About",
+                link: "about.html",
+                subMenu: [
+                    {
+                        name: "About 01",
+                        link: "about.html"
+                    },
+                    {
+                        name: "About 02",
+                        link: "about.html"
+                    },
+                    {
+                        name: "About 03",
+                        link: "about.html"
+                    }
+                ]
+            },
+            {
+                name: "Blog",
+                link: "blog.html"
+            },
+            {
+                name: "Shop",
+                link: "shop.html",
+                subMenu: [
+                    {
+                        name: "Shop 01",
+                        link: "shop.html"
+                    },
+                    {
+                        name: "Shop 02",
+                        link: "shop.html"
+                    },
+                    {
+                        name: "Shop 03",
+                        link: "shop.html"
+                    }
+                ]
+            },
+            {
+                name: "Contact",
+                link: "contact.html"
+            }
+        ]
+        
+        const menu = document.createElement("div")
+        menu.classList.add("menu")
+        
+        const menuInner = document.createElement("div")
+        menuInner.classList.add("menu-inner")
+        menu.appendChild(menuInner)
+
+        const ul = document.createElement("ul")
+        ul.classList.add("menu-lists")
+        menuInner.appendChild(ul)
+
+        let fragment = document.createDocumentFragment();
+
+        menus.forEach(nav => {
+            const li = document.createElement("li")
+
+            const link = document.createElement("a")
+            link.setAttribute("href", `${nav.link}`)
+            link.innerHTML = nav.name
+
+            li.appendChild(link)
+
+            fragment.appendChild(li)
+
+            if(nav.subMenu) {
+                const dropdown = document.createElement("ul")
+                dropdown.classList.add("dropdown-menu")
+                li.appendChild(dropdown)
+
+                nav.subMenu.forEach(subNav => {
+                    const li2 = document.createElement("li")
+                    
+                    const link2 = document.createElement("a")
+                    link2.setAttribute("href", `${subNav.link}`)
+                    link2.innerHTML = subNav.name
+                    dropdown.appendChild(li2)
+                    li2.appendChild(link2)
+                })
+            }
+        })
+
+        ul.appendChild(fragment)
+        
+        document.body.appendChild(menu)
+
+        const firstLi = document.createElement("li")
+
+        const firstLink = document.createElement("a")
+        firstLink.innerHTML = "Home"
+        firstLink.setAttribute("href", "home.html")
+
+        firstLi.appendChild(firstLink)
+        
+        ul.insertBefore(firstLi, ul.firstElementChild)
+
+        
+
+    </script>
+</body>
+</html>

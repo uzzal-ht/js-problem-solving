@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+
+    let s = "book"
+    
+    var halvesAreAlike = function(s) {
+        let transformText = s.toLowerCase()
+        const halves1 = []
+        const halves2 = []
+
+        const vowels = "aeiou"
+
+        const half = transformText.length / 2
+
+        for(let i = 0; i < half; i++) {
+            halves1.push(transformText[i])
+            
+        }
+        for(let j = half; j < transformText.length; j++) {
+            halves2.push(transformText[j])
+        }
+
+        let count1 = 0
+        halves1.forEach(item => {
+            if(vowels.includes(item)) {
+                count1 += 1
+            }
+        })
+
+        let count2 = 0
+        halves2.forEach(item => {
+            if(vowels.includes(item)) {
+                count2 += 1
+            }
+        })
+
+        return count1 === count2
+    };
+
+    console.log(halvesAreAlike(s));
+        
+
+    </script>
+</body>
+</html>

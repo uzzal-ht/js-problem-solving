@@ -1,0 +1,102 @@
+
+/*------ Typography Style Start ------*/
+body {
+    color: #444444;
+    line-height: 1.7;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+p:last-child {
+     margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #333333;
+    margin-bottom: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+.btn,
+button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    transition: 0.4s;
+}
+
+.btn:active, 
+.btn:focus,
+button:active,
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+input,
+textarea {
+    resize: none;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+.page-header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.card-wrapper {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.quote-inner {
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 40px;
+    border-radius: 10px;
+}
+.quote-inner .btn {
+    color: #fff;
+    background-color: #333;
+}
+.quote-inner .btn:hover {
+    background-color: #000;
+}
+.quote-inner h4 {
+    margin-top: 30px;
+}
+.author {
+    margin-top: 10px;
+    color: blueviolet;
+}

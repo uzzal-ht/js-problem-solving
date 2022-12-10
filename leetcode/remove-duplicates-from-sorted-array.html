@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+
+        const nums = [0,0,1,1,1,2,2,3,3,4]
+
+        var removeDuplicates = function(nums) {
+            let arr = []
+
+            for(let i = 0; i < nums.length; i++) {
+                for(let j = i+1; j < nums.length; j++) {
+                    if(nums[i] === nums[j]) {
+                        nums[j] = "_"
+                    } 
+                }
+                arr.push(nums[i])
+            }
+
+            for(let i = 0; i < arr.length; i++) {
+                for(let j = i+1; j < arr.length; j++) {
+                    if (arr[i] == "_") {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+
+            let newArray = []
+
+            arr.forEach(item => {
+                if(item !== "_") {
+                    newArray.push(item)
+                }
+            })
+
+            return newArray
+        };
+
+        console.log(removeDuplicates(nums));
+
+        
+
+    </script>
+</body>
+</html>

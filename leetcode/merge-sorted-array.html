@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    
+
+
+    <script>
+
+    const nums1 = [0,0,0,0,0]
+    const m = 0
+    const nums2 = [1,2,3,4,5]
+    const n = 5
+
+    var merge = function(nums1, m, nums2, n) {
+        nums1.splice(m, m, ...nums2.slice(0,n))
+        nums1.sort((a, b) => a - b)
+
+        for(let i = 0; i < nums1.length; i++ ){ 
+            if(nums1[i] == 0){
+                nums1.splice(i, 1);
+                i--
+            } 
+        }
+        return nums1
+    };
+
+    console.log(merge(nums1, m, nums2, n));
+
+    </script>
+</body>
+</html>

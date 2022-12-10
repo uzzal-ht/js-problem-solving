@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+        .card-wrapper {
+            max-width: 700px;
+            margin: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+
+        const data = [
+            {
+                "id": 1,
+                "title": "Title no 01",
+                "categories": {
+                    "name": "development",
+                    "slug": "development"
+                }
+            },
+            {
+                "id": 2,
+                "title": "Title no 02",
+                "categories": {
+                    "name": "business",
+                    "slug": "business"
+                }
+            },
+            {
+                "id": 3,
+                "title": "Title no 03",
+                "categories": {
+                    "name": "art & design",
+                    "slug": "art-design"
+                }
+            }
+        ]
+
+        const cats = data.map(item => item.categories)
+
+        const map = [...new Map(cats.map(item => [item.name, item]))]
+
+        console.log(map);
+
+    </script>
+</body>
+</html>
