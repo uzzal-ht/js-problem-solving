@@ -5,7 +5,6 @@ body {
     line-height: 1.7;
     font-size: 14px;
     font-weight: 400;
-    background-color: #f9f9f9;
 }
 
 a {
@@ -33,7 +32,6 @@ h5,
 h6 {
     color: #333333;
     margin-bottom: 0;
-    font-weight: 500;
 }
 
 ul {
@@ -48,7 +46,6 @@ ul li {
 .btn,
 button {
     border: none;
-    color: #fff;
     cursor: pointer;
     outline: none;
     box-shadow: none;
@@ -75,41 +72,5 @@ textarea:focus {
 
 .page-header {
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 100px;
-}
-
-.filter-button-group {
-    display: flex;
-    justify-content: center;
-}
-
-.filter-button-group .btn:not(:last-child) {
-    margin-right: 10px;
-}
-
-.item-wrapper {
-    margin-top: 80px;
-}
-
-.item img {
-    width: 100%;
-}
-
-.item {
-    background-color: #fff;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 30px;
-}
-
-.item .footer {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.search-wrapper {
-    max-width: 500px;
-    margin: 50px auto 0;
+    margin: 50px 0;
 }
