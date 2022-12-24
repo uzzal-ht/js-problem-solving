@@ -1,5 +1,6 @@
 const productRow = document.querySelector(".product-inner")
 const cartItemsList = document.querySelector(".cart-items-wrapper")
+const total = document.querySelector(".total")
 
 
 const productEndPoint = "http://localhost:3000/products"
@@ -38,11 +39,26 @@ function renderProduct(products) {
 }
 
 
-let cartData = []
+
+// add to cart click handler function
+function showCart(products) {
+    productRow.addEventListener("click", function(e) {
+        const target = e.target
+        if(target.classList.contains("action-btn")) {
+            const proId = target.dataset.id
+    
+            products.find(item => {
+                if(item.productId == proId) {
+                    postCartData(item)
+                }
+            })
+        }
+    })
+}
 
 // cart items render function
-function renderCartData() {
-    cartData.find(item => {
+function renderCartData(cartData) {
+    cartData.forEach(item => {
         const cartItem = `
             <li class="cart-item">
                 <div class="cart-thumb">
@@ -61,33 +77,27 @@ function renderCartData() {
 
 
 // add to cart click handler function
-function showCart(products) {
-    productRow.addEventListener("click", function(e) {
-        const target = e.target
-        if(target.classList.contains("action-btn")) {
-            const proId = target.dataset.id
-    
-            products.find(item => {
-                if(item.productId == proId) {
-                    postCartData(item)
-                }
-            })
-        }
-    })
-}
-
-
-// add to cart click handler function
 async function postCartData(item) {
-    const {data} = await axios.post(cartEndPoint, item)
-    renderCartData(data)
+    item = {
+        ...item,
+        quantity: 1
+    }
+    let {data} = await axios.post(cartEndPoint, item)
+    renderCartData([data])
 }
 
 
 // cart items fetch
 async function fetchCartData() {
     const {data} = await axios.get(cartEndPoint)
-    cartData.push(...data)
     renderCartData(data)
+
+    let res = 0
+    data.forEach(el => {
+        res += el.price
+    })
+
+    total.innerHTML = res.toFixed(2)
+
 }
 fetchCartData()
